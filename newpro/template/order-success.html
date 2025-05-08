@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Confirmation</title>
+
+  <style>
+    h2, p, h3, ul, li, a {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 45px;
+      color: #6c5ce7;
+    }
+
+    h3 {
+      font-size: 25px;
+      color: #6c5ce7;
+    }
+
+    p {
+      color: #696969;
+      font-size: 22px;
+    }
+
+    ul {
+      list-style-type: none;
+      color: #696969;
+      font-size: 22px;
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      font-size: 22px;
+      display: block;
+      margin-top: 30px;
+      color: #6c5ce7;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .download-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #6c5ce7;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      text-align: center;
+      margin-left: 320px;
+    }
+
+    .download-button:hover {
+      background-color: #4e3bb2;
+    }
+
+    .container {
+      border: 2px solid #6c5ce7;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 800px;
+      margin: 50px auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #f5f0ff;
+      position: relative;
+    }
+
+    .success-icon {
+      font-size: 40px;
+      color: #2ecc71;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+  
+    .no-screenshot {
+     
+    }
+    
+@media (max-width: 479px) {
+  h2 {
+    font-size: 38px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  p, ul, li, a {
+    font-size: 26px;
+  }
+
+  .download-button {
+    width: 80%;
+    margin: 20px auto;
+    display: block;
+    font-size: 26px;
+    margin-left: auto;
+  }
+
+  .container {
+    width: 300px;
+    padding: 15px;
+    margin: 20px 5px;
+  }
+}
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+  h2 {
+    font-size: 42px;
+  }
+
+  h3 {
+    font-size: 34px;
+  }
+
+  p, ul, li, a {
+    font-size: 28px;
+  }
+
+  .download-button {
+    width: 70%;
+    margin: 20px auto;
+    display: block;
+    font-size: 28px;
+  }
+
+  .container {
+    padding: 20px;
+    margin: 30px 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+
+  p, ul, li, a {
+    font-size: 20px;
+  }
+
+  .download-button {
+    width: 70%;
+    margin: 20px auto;
+    display: block;
+    font-size: 20px;
+  }
+
+  .container {
+    padding: 25px;
+    margin: 40px auto;
+  }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  h2 {
+    font-size: 42px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  p, ul, li, a {
+    font-size: 21px;
+  }
+
+  .download-button {
+    width: 300px;
+    margin: 20px auto;
+    display: block;
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 55%;
+    margin: 50px auto;
+  }
+}
+
+
+@media (min-width: 1440px) {
+  h2 {
+    font-size: 45px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  p, ul, li, a {
+    font-size: 22px;
+  }
+
+  .download-button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 20px;
+    width: 300px;
+  }
+
+  .container {
+    max-width: 800px;
+    padding: 30px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="container" id="receipt">
+    <div class="success-icon">✔️</div>
+    <h2>Order Placed Successfully!</h2>
+
+    <p><strong>Name:</strong> {{ order.customer_name }}</p>
+    <p><strong>Phone Number:</strong> {{ order.phone_number }}</p>
+    <p><strong>Date Ordered:</strong> {{ order.date_ordered }}</p>
+
+    <h3>Items Ordered:</h3>
+    <ul>
+      {% for item in order.items_for_order %}
+          <li>{{ item.name }} - {{ item.quantity }}</li>
+      {% endfor %}
+  </ul>
+    <p><strong>Total Price:</strong> ${{ order.total_price }}</p>
+
+    <a href="#" id="downloadImageBtn" class="download-button no-screenshot">Download Receipt</a>
+    <a href="{% url 'home' %}" class="no-screenshot">Back to home</a>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <script>
+    document.getElementById("downloadImageBtn").addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const target = document.getElementById("receipt");
+
+      html2canvas(target, {
+        useCORS: true,
+        backgroundColor: "#ffffff",
+        scale: 2,
+        ignoreElements: (element) => {
+          return element.classList.contains("no-screenshot");
+        }
+      }).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "receipt.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    });
+  </script>
+</body>
+</html>

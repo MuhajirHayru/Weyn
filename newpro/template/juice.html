@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice Menu</title>
+    <!-- <link rel="stylesheet" href="{% static 'css\cartbtn.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css\jjj.css' %}">
+    <link href="{% static 'https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' %}" rel='stylesheet'>
+</head>
+<body>
+    <div class="heading">
+        <div class="heading1"><h1>Menu Of Juice</h1></div>
+        <div class="heading2"> <a href="{% url 'cart' %}" class="l"><button class="button1"> cart</button></a></div>
+      
+    </div>
+    {% if cart %}
+        <ul>
+            {% for item_name, item in cart.items %}
+                <li>{{ item_name }} - {{ item.quantity }} x {{ item.price }} birr</li>
+            {% endfor %}
+        </ul>
+    
+        <p><strong>Total Price:</strong> {{ total_price }} birr</p>
+    
+        <a href="{% url 'checkout' %}">Proceed to Checkout</a>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+        </div>
+  
+    <section class="main-container">
+        <div class="search-container">
+            <input type="text" placeholder="Search here........." id="search-input">
+            <div class="search-footer">
+                <div class="search-text">Woyne Cafe</div>
+            </div>
+        </div>
+
+        <section class="lunch-dinner-container" id="lunch-dinner-container">
+            {% for x in breaks %}
+            <div class="lunch1">  <!-- ✅ Correctly wrap each juice item -->
+                <img src="{{ x.image.url }}" alt="{{ x.title }}">
+                <div class="name"><h3>{{ x.title }}</h3></div>
+                <div class="price1"><p><strong>Price:</strong> <span class="price">{{ x.price }} birr</span></p></div>
+                <div><input type="hidden" name="type" value="drink"></div>
+                <div class="ordere-button">
+                    {% if x.quantity > 0 %}
+                        <button class="order" onclick="addToCart('{{ x.id }}', '{{ x.title }}', '{{ x.price }}', 'drink')">
+                            Order
+                        </button>
+                    {% else %}
+                        <button class="order" disabled style="background-color: gray; cursor: not-allowed;">
+                           ይቅርታ ጨርሰናል
+                        </button>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </section>
+
+    <script src="{% static 'js/juce.js' %}"></script>  <!-- ✅ Corrected JS reference -->
+</body>
+</html>

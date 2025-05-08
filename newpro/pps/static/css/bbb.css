@@ -1,0 +1,390 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+.heading {
+  text-align: center;
+  background-color: rgb(107, 163, 109);
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+}
+.heading1
+  {
+      width: 80%;
+      height: 100%;
+  }
+  .heading1 h1{
+    margin-left: 150px;
+  }
+  .heading2
+  {
+      width: 10%;
+      height: 100%;
+      position: absolute;
+      top: 60px;
+      right: -20px;
+  }
+  .heading2 .button1
+  {
+    background-color: rgb(255, 132, 0);
+    border-radius: 10px;
+    width: 70px;
+    height: 40px;
+
+  }
+.heading h1 {
+  padding-top: 35px;
+  font-size: 40px;
+  transition: none;
+}
+.search-container {
+  width: 250px;
+  height: 83vh; 
+  top:16%;
+  border: 1px solid black;
+  border-radius: 15px;
+  position: fixed;
+  overflow: hidden;
+  left: 3px;
+  z-index: 1;
+}
+.main-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+#search-input {
+  margin-top: 50px;
+  height: 25px;
+  border-radius: 5px;
+  width: 100%;
+}
+#search-input::placeholder {
+  color: green;
+  font-size: 17px;
+  font-weight: bold;
+}
+.lunch-dinner-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 80%;
+  position: relative;
+  top: 120px;
+  left: 200px;
+}
+.lunch1 {
+  width: 220px;
+  height: 300px;
+  margin-bottom: 30px;
+  border: 2px solid black;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  margin-left: 65px;
+}
+.lunch1 img {
+  width: 100%;
+  height: 50%;
+}
+.name,
+.price1,
+.ordere-button,
+.checkbox-type{
+  text-align: center;
+  width: 100%;
+  height: 10%;
+}
+.ordere-button {
+  padding-top: 12px;
+}
+.checkbox-type {
+  border-bottom: 1px solid rgb(221, 204, 181);
+}
+.checkbox-type input {
+  width: 40%;
+  height: 20px;
+}
+.name,
+.price1 {
+  border-bottom: 1px solid rgb(221, 204, 181);
+  font-size: 25px;
+}
+.ordere-button button {
+  width: 200px;
+  height: 30px;
+  background-color: rgb(107, 163, 109);
+  border-radius: 10px;
+  font-size: 20px;
+}
+button{
+  cursor: pointer;
+}
+.ordere-button button:hover {
+  color: #0a0a23;
+  background-color: rgb(255, 102, 0);
+  transform: scale(1.1);
+}
+.search-footer{
+  margin-top: 400px;
+}
+.search-text {
+  margin: 20px 50px 20px 60px;
+  width: 100%;
+  height: 100%;
+  color: rgb(255, 102, 0);
+}
+/* Desktops */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .heading {
+    height: 110px;
+  }
+  .heading h1 {
+    font-size: 45px;
+  }
+  .search-container {
+    width: 220px;
+    height: 100%;
+    top:10%
+  }
+  .lunch-dinner-container {
+    grid-template-columns: repeat(3, 1fr);
+    width: 85%;
+    left: 150px;
+    margin-left: 1px;
+  }
+  .lunch1 {
+    width: 200px;
+    height: 300px;
+    margin-left:80px;
+  }
+  .name,
+  .price1 {
+    font-size: 28px;
+  }
+  button{
+    cursor: pointer;
+  }
+  .ordere-button button {
+    width: 190px;
+    height: 35px;
+    font-size: 21px;
+  }
+}
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .heading {
+    height: 100px;
+  }
+  .heading h1 {
+    font-size: 40px;
+  }
+  .search-container {
+    width: 200px;
+    height: 90%;
+  }
+  .lunch-dinner-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    left: 100px;
+  margin-left: 50px;
+  }
+  .lunch1 {
+    width: 200px;
+    height: 300px;
+    margin-left: 70px;
+  }
+  .name,
+  .price1 {
+    font-size: 26px;
+  }
+  button{
+    cursor:pointer;
+  }
+  .ordere-button button {
+    width: 170px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile phones */
+@media only screen and (max-width: 767px) {
+  .main-container{
+    width: 70%;
+   margin: auto;
+  }
+  .heading {
+    height: 90px;
+    overflow: hidden;
+  }
+  .heading2
+{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    top: 50px;
+    right: 35px;
+}
+  .heading h1 {
+    padding-top: 10px;
+    font-size: 20px;
+  }
+  #search-input{
+    width: 100%;
+    left: auto;
+    margin-top: 10px;
+  }
+  .search-container {
+    width: 100%;
+    height: 100px;
+    left: 0;
+    top: 10%;
+  }
+  .lunch-dinner-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    left: 0;
+  }
+  .lunch1 {
+    width: 100%;
+    height: 80%;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .name,
+  .price1 {
+    font-size: 24px;
+  }
+  button{
+    cursor: pointer;
+  }
+  .ordere-button button {
+    width: 90%;
+    height: 30px;
+    font-size: 18px;;
+  }
+  .search-footer {
+  margin-top: 0;
+  }
+}
+
+/* Form Fields */
+.order-popup label {
+  display: inline;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.order-popup input[type="text"],
+.order-popup input[type="number"] {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Form Buttons */
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.popup-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-buttons button[type="submit"] {
+  background-color: green;
+  color: white;
+}
+
+.popup-buttons button[type="button"] {
+  background-color: red;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-popup {
+      width: 40%;
+      padding: 15px;
+  }
+
+  .form-popup {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+.order-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 1000;
+}
+.popup-content {
+  position: relative;
+}
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.popup-content h2 {
+  margin-bottom: 10px;
+}
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.popup-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popup-buttons button:first-child {
+  background-color: green;
+  color: white;
+}
+.popup-buttons button:last-child {
+  background-color: red;
+  color: white;
+}
+.selected-item {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.selected-item p {
+  margin: 0;
+}
+.remove-item {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+}

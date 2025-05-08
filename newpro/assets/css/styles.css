@@ -1,0 +1,936 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(20, 17, 51);
+  height: 100vh;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between; /* Push items to edges */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  padding: 15px 40px; /* Add spacing */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideNavBar 1.8s ease-out forwards;
+  opacity: 0;
+}
+.link1,
+.link2,
+.link3,
+.link4 {
+  animation: slideFromBack 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.link1 {
+  animation-delay: 0.2s;
+}
+
+.link2 {
+  animation-delay: 0.4s;
+}
+
+.link3 {
+  animation-delay: 0.6s;
+}
+
+.link4 {
+  animation-delay: 0.8s;
+}
+
+@keyframes slideFromBack {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.logo {
+  font-size: 25px;
+  margin-left: 0;
+}
+
+.logo b {
+  color: brown;
+}
+
+.bar {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bar li {
+  display: inline-block;
+}
+
+.bar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.bar a:hover {
+  color: brown;
+}
+
+#home {
+  width: 100%;
+  display: flex;
+  margin-top: 160px;
+}
+.title {
+  width: 50%;
+  font-size: 27px;
+  margin-left: 50px;
+  animation: slideTitle 1.5s ease-out forwards;
+  opacity: 0;
+}
+.image {
+  width: 50%;
+}
+.home-image {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  margin-left: 100px;
+  margin-top: 10px;
+  animation: slideImage 1s ease-out forwards;
+  animation: rotate 5s infinite linear;
+}
+.and {
+  margin-left: 250px;
+}
+.res {
+  margin-left: 150px;
+}
+.title p {
+  margin-top: 50px;
+}
+.h1-choose {
+  text-align: center;
+  font-size: 30px;
+
+  padding: 20px;
+}
+.menu {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  margin-top: 70px;
+}
+#menu {
+  width: 100%;
+  height: 100%;
+}
+.link1,
+.link2,
+.link3,
+.link4 {
+  width: 25%;
+}
+.link1 img {
+  width: 300px;
+  height: 300px;
+  border-radius: 15%;
+  border: 2px solid cyan;
+  margin-left: 30px;
+}
+
+.link2 img {
+  width: 300px;
+  height: 300px;
+  border-radius: 15%;
+  margin-left: 30px;
+  border: 2px solid cyan;
+}
+.link3 img {
+  width: 300px;
+  height: 300px;
+  border-radius: 15%;
+  margin-left: 30px;
+  border: 2px solid cyan;
+}
+.link4 img {
+  width: 300px;
+  height: 300px;
+  border-radius: 15%;
+  margin-left: 30px;
+  border: 2px solid cyan;
+}
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.l {
+  text-align: center;
+  color: black;
+  margin-left: 0px;
+  padding-left: 70px;
+  text-decoration: none;
+}
+.button1 {
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 200px;
+}
+.button1:hover {
+  background-color: black;
+  color: aliceblue;
+}
+/*about*/
+#about {
+  width: 100%;
+  height: 100%;
+}
+.about {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  animation: fadeInAboutText 1s ease-out forwards;
+}
+
+.about-text {
+  width: 50%;
+  margin-top: 80px;
+  margin-left: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.about-text p {
+  .text p {
+    animation: slideTextFromTop 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .text p:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+
+  .text p:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+
+  .text p:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+}
+.weyne-image {
+  width: 50%;
+  height: 100%;
+  margin-top: 80px;
+  margin-left: 200px;
+  animation: slideImageFromBottom 1s ease-out forwards;
+  opacity: 0;
+}
+.weyne-image img {
+  width: 500px;
+  height: 450px;
+  border: 1px solid none;
+  border-radius: 15px;
+}
+
+.manager {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+#about h1 {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 20px;
+}
+#about h1 span {
+  color: brown;
+}
+.more {
+  padding: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 270px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.about-text h3 {
+  margin-top: 30px;
+}
+/*contact*/
+#contact h1 {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 20px;
+}
+#contact h1 span {
+  color: brown;
+}
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 100px;
+  height: 100%;
+}
+.contact1 {
+  width: 50%;
+  margin-bottom: 200px;
+  margin-left: 150px;
+  animation: contactTwo 1.8s ease-out forwards;
+}
+.contact2 {
+  width: 50%;
+  height: 100%;
+  animation: contact1TORight 1.8s ease-out forwards;
+}
+.contact1 p {
+  margin: 30px;
+}
+.contact2 {
+  border: 2px solid aqua;
+  width: 500px;
+  height: 400px;
+  margin-right: 70px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 10px 10px 10px 10px rgb(122, 118, 138),
+    -10px -10px 10px 10px rgb(122, 118, 138);
+}
+.copy {
+  width: 100%;
+  height: 40px;
+  background-color: black;
+  color: azure;
+  text-align: center;
+  display: flex;
+}
+.copy p {
+  padding-top: 10px;
+  width: 90%;
+}
+.copy a {
+  width: 10%;
+  padding-left: 100px;
+  font-size: 40px;
+  height: 40px;
+  color: aqua;
+}
+input {
+  width: 70%;
+  height: 40px;
+  border: 1px solid aqua;
+  border-radius: 5px;
+}
+#fname,
+#lname,
+#email {
+  margin-top: 30px;
+}
+
+textarea {
+  width: 80%;
+  height: 20%;
+  margin: 20px;
+  margin-left: 70px;
+  border: 1px solid aqua;
+  border-radius: 10px;
+}
+label {
+  margin: 20px;
+}
+#email {
+  margin-left: 27px;
+}
+.submit {
+  width: 80%;
+  height: 30px;
+  margin-left: 70px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 20px;
+}
+.submit:hover {
+  background-color: black;
+  color: aliceblue;
+}
+@keyframes slideImage {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideTitle {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes contactTwo {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideNavBar {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes contact1TORight {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideTextFromTop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideImageFromBottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAboutText {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .logo {
+    font-size: 22px;
+    margin-bottom: 10px; /* Space between logo and menu */
+  }
+
+  .bar {
+    justify-content: center;
+    text-align: left;
+
+    /* Center menu */
+  }
+
+  .bar a {
+    font-size: 16px;
+    padding: 6px 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  h3 {
+    text-align: center;
+    margin-left: 100px;
+  }
+  
+
+  #home {
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    width: 80%;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .image {
+    width: 80%;
+    margin-top: 50px;
+  }
+
+  .home-image {
+    width: 300px;
+    height: 300px;
+    margin-left: 180px;
+  }
+
+  .and,
+  .res {
+    margin-left: 0;
+  }
+
+  #menu {
+    margin-top: 150px;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 50px;
+
+    flex-wrap: wrap;
+  }
+
+  .link1,
+  .link2,
+  .link3,
+  .link4 {
+    width: 15%;
+    margin: 20px;
+  }
+
+  .link1 img,
+  .link2 img,
+  .link3 img,
+  .link4 img {
+    width: 250px;
+    height: 250px;
+    margin-left: 0;
+  }
+  .h1-shef {
+    text-align: center;
+    margin-right: 170px;
+  }
+
+  .l {
+    padding-left: 0;
+  }
+
+  #about {
+    margin-top: 150px;
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text {
+    width: 80%;
+    margin-top: 50px;
+  }
+  .about-text p {
+    font-size: 24px;
+  }
+  .weyne-image {
+    width: 80%;
+    margin-top: 100px;
+    margin-left: 250px;
+    margin-right: auto;
+    margin-bottom: 200px;
+  }
+
+  .weyne-image img {
+    width: 400px;
+    height: 350px;
+  }
+
+  .field {
+    justify-content: center;
+  }
+
+  .field div {
+    margin: 0 20px;
+  }
+
+  .more {
+    margin-left: 300px;
+  }
+
+  #contact {
+    margin-top: 100px;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact1 {
+    width: 80%;
+    margin-bottom: 50px;
+    margin-left: 400px;
+  }
+
+  .contact2 {
+    width: 70%;
+    height: 500px;
+    margin-left: 50px;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+  }
+  input {
+    width: 70%;
+    height: 40px;
+    border: 1px solid aqua;
+    border-radius: 5px;
+  }
+  #fname,
+  #lname,
+  #email {
+    margin-top: 40px;
+  }
+
+  textarea {
+    width: 80%;
+    height: 20%;
+    margin: 20px;
+    margin-left: 70px;
+    border: 1px solid aqua;
+    border-radius: 10px;
+  }
+  label {
+    margin: 20px;
+  }
+  #email {
+    margin-left: 27px;
+  }
+
+  .submit {
+    margin-left: 70px;
+    margin-bottom: 70px;
+  }
+  .manager h3 {
+    text-align: center;
+  }
+  .button1 {
+    margin-left: 70px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 100px;
+  }
+  .copy {
+    width: auto;
+    height: 30px;
+    background-color: black;
+    color: azure;
+    text-align: center;
+    display: flex;
+  }
+  .copy p {
+    padding-top: 5px;
+    width: 70%;
+    text-align: center;
+  }
+  .copy a {
+    width: 30%;
+    font-size: 40px;
+    height: 30px;
+    color: aqua;
+  }
+}
+
+/* Phone Styles */
+@media (max-width: 767px) {
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: rgb(20, 17, 51);
+    z-index: 1;
+  }
+  h3 {
+    text-align: center;
+    margin-left: 50px;
+    font-size: 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .bar {
+    width: 100%;
+    justify-content: right;
+    right: 0;
+    margin-top: 10px;
+  }
+
+  #home {
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 100px;
+  }
+
+  .image {
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 150px;
+  }
+
+  .home-image {
+    width: 200px;
+    height: 200px;
+    margin-left: 40px;
+  }
+
+  .and,
+  .res {
+    margin-left: 0;
+  }
+
+  #menu {
+    margin-top: 150px;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 80px;
+    gap: 20px;
+  }
+  .h1-choose {
+    margin-left: 70px;
+  }
+  .button1 {
+    margin-left: 40px;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 10px;
+    width: 80px;
+  }
+  .link1,
+  .link2,
+  .link3,
+  .link4 {
+    width: 50px;
+    margin: 20px 0;
+  }
+
+  .link1 img,
+  .link2 img,
+  .link3 img,
+  .link4 img {
+    width: 150px;
+    height: 150px;
+    margin-left: 0;
+  }
+
+  .l {
+    padding-left: 0;
+  }
+
+  #about {
+    margin-top: 150px;
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+  body {
+    overflow-x: hidden;
+  }
+
+  .about-text {
+    width: 100%;
+    margin-top: 50px;
+    margin-left: 150px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .manager {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  .h1-shef {
+    text-align: center;
+    margin-right: 120px;
+  }
+  .about-title {
+    text-align: center;
+    margin-left: 120px;
+  }
+
+  .field div {
+    margin: 20px 0;
+  }
+
+  .more {
+    margin-left: 130px;
+  }
+  .weyne-image {
+    width: 40%;
+    margin-top: 100px;
+    margin-right: 225px;
+    margin-bottom: 200px;
+  }
+
+  .weyne-image img {
+    width: 300px;
+    height: 200px;
+  }
+
+  #contact {
+    margin-top: 300px;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+  #contact h1 {
+    text-align: center;
+    margin-left: 100px;
+  }
+
+  .contact1 {
+    width: 90%;
+    margin-bottom: 50px;
+  }
+
+  .contact2 {
+    width: 80%;
+    height: auto;
+    margin-left: 200px;
+  }
+
+  input {
+    width: 50%;
+    height: 30px;
+    border: 1px solid aqua;
+    border-radius: 5px;
+  }
+  #fname,
+  #lname,
+  #email {
+    margin-top: 20px;
+  }
+
+  textarea {
+    width: 70%;
+    height: 30%;
+    margin: 20px;
+    margin-left: 70px;
+    border: 1px solid aqua;
+    border-radius: 10px;
+  }
+  label {
+    margin: 20px;
+  }
+  #email {
+    margin-left: 27px;
+  }
+
+  .submit {
+    width: 70%;
+    margin-left: 70px;
+    margin-bottom: 70px;
+  }
+  .copy {
+    width: 500px;
+    height: 20px;
+    background-color: black;
+    color: azure;
+    text-align: center;
+    display: flex;
+    font-size: 12px;
+  }
+  .copy p {
+    width: 100%;
+    padding-right: 50px;
+  }
+  .copy a {
+    width: 50%;
+    padding-left: 50px;
+    font-size: 20px;
+    height: 20px;
+    color: aqua;
+  }
+}

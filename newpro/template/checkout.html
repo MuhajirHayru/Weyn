@@ -1,0 +1,62 @@
+{% load static %}
+<!-- <meta http-equiv="refresh" content="3">  -->
+<link rel="stylesheet" href="{% static 'css/check2.css' %}">
+<h2>Checkout</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="customer_name">Name:</label>
+    <input type="text" id="customer_name" name="customer_name" required>
+
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number" required>
+
+    <h3>Your Order:</h3>
+    <ul>
+        {% for item_name, item in cart.items %}
+            <li>{{item.name }} - {{ item.quantity }} x ${{ item.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <p><strong>Total Price:</strong> ${{ total_price }}</p>
+    <a href="{% url 'cart' %}">Back to Cart</a>
+    <button type="submit">Place Order</button>
+</form>
+
+
+
+<script>
+    function placeOrder() {
+    let selectedItems = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    if (selectedItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    let customerName = document.getElementById('popupFirstName').value;
+    let phoneNumber = document.getElementById('popupPhoneNumber').value;
+    let totalPrice = selectedItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    fetch('/place-order/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken()
+        },
+        body: JSON.stringify({
+            customer_name: customerName,
+            phone_number: phoneNumber,
+            items: selectedItems,  // Send selected items as JSON
+            total_price: totalPrice
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+        localStorage.removeItem('cart');  // Clear cart after ordering
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+</script>

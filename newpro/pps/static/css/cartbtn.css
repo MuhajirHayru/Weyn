@@ -1,0 +1,27 @@
+/*.heading h1{
+    padding-top: 0px;
+    margin-bottom: 0;
+}
+.button1 {
+    margin-left: 70rem;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 18px;
+    width: 150px;
+    background-color: rgb(226, 93, 21);
+    color: white;
+  }
+  .l {
+    padding-left: 0;
+  }
+  /*media quary phone
+  @media (max-width: 767px) {
+    .button1 {
+        margin-top: -20px;
+        margin-left: 40px;
+        padding: 10px;
+        border-radius: 7px;
+        font-size: 15px;
+        width: 80px;
+      }
+  }*/
